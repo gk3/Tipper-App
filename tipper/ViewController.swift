@@ -10,7 +10,6 @@ import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
 
-//    @IBOutlet weak var tipControl: UISegmentedControl!
     @IBOutlet weak var billField: UITextField!
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
@@ -26,22 +25,28 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var vgoodBtn: UIButton!
     @IBOutlet weak var increaseBtn: UIButton!
     @IBOutlet weak var decreaseBtn: UIButton!
+    @IBOutlet weak var resetBtn: UIButton!
     @IBOutlet weak var serviceView: UIView!
     @IBOutlet weak var totalView: UIView!
     @IBOutlet weak var billView: UIView!
     @IBOutlet weak var splitView: UIView!
     @IBOutlet weak var splitCount: UILabel!
+    @IBOutlet var numToolbar: UIToolbar!
     
     var currentString = ""
     
     var tipPercent = 0.15
-    var currentService = "😐"
+    var currentService = "😬"
     var guestCount = 0
+    var maxGuestCount = 14
+    
+    let tipModes = ["normal", "up", "down"]
+    var tipMode = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var attributedString = NSMutableAttributedString(string: "TIPPER")
+        var attributedString = NSMutableAttributedString(string: "TIPMOJI")
         attributedString.addAttribute(NSKernAttributeName, value: CGFloat(6), range: NSRange(location: 0, length: attributedString.length))
         appLabel.attributedText = attributedString
         
@@ -57,7 +62,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         attributedString.addAttribute(NSKernAttributeName, value: CGFloat(1.4), range: NSRange(location: 0, length: attributedString.length))
         splitLabel.attributedText = attributedString
 
-        attributedString = NSMutableAttributedString(string: "YOU SHOULD PROBABLY TIP")
+        attributedString = NSMutableAttributedString(string: "👇 COOL, YOU SHOULD TIP 👇")
         attributedString.addAttribute(NSKernAttributeName, value: CGFloat(1.4), range: NSRange(location: 0, length: attributedString.length))
         shouldLabel.attributedText = attributedString
         
@@ -65,22 +70,35 @@ class ViewController: UIViewController, UITextFieldDelegate {
         attributedString.addAttribute(NSKernAttributeName, value: -1.1, range: NSMakeRange(0, attributedString.length))
         tipLabel.attributedText = attributedString
 
-        attributedString = NSMutableAttributedString(string: "$0.00 TOTAL PER PERSON")
+        attributedString = NSMutableAttributedString(string: "($0.00 TOTAL PER PERSON)")
         attributedString.addAttribute(NSKernAttributeName, value: -1.1, range: NSMakeRange(0, attributedString.length))
         totalLabel.attributedText = attributedString
         
         splitCount.text = ""
         
-        UIApplication.sharedApplication().statusBarHidden = true
-        
-        
         serviceView.alpha = 0
         splitView.alpha = 0
         totalView.alpha = 0
         decreaseBtn.alpha = 0.2
-        
+        self.resetBtn.alpha = 0
+                    
         self.billField.delegate = self
         billField.becomeFirstResponder()
+        
+        
+        billField.inputAccessoryView = numToolbar
+        numToolbar.barStyle = UIBarStyle.BlackTranslucent
+        
+        let gradient: CAGradientLayer = CAGradientLayer()
+        
+        gradient.colors = [UIColor(red:0.37, green:0.13, blue:0.55, alpha:1).CGColor, UIColor(red:0.77, green:0, blue:1, alpha:1).CGColor]
+        gradient.locations = [0.0 , 1.0]
+        gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
+        gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
+        gradient.frame = CGRect(x: 0.0, y: 0.0, width: self.view.frame.size.width, height: self.view.frame.size.height)
+        
+        self.view.layer.insertSublayer(gradient, atIndex: 0)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -88,11 +106,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    func doneButtonAction() {
+        self.billField.resignFirstResponder()
+    }
+    
     func textField(billField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         switch string {
         case "0","1","2","3","4","5","6","7","8","9":
             currentString += string
-            println(currentString)
+//            println(currentString)
             formatCurrency(string: currentString)
         default:
             var array = Array(string)
@@ -110,7 +132,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func formatCurrency(#string: String) {
-        println("format \(string)")
+//        println("format \(string)")
         let formatter = NSNumberFormatter()
         formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
         formatter.locale = NSLocale(localeIdentifier: "en_US")
@@ -121,26 +143,49 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func onEditingChanged(sender: AnyObject) {
         if billField.text == ""{
-         println("empty")
+            UIView.animateWithDuration(0.2, animations: {
+                self.resetBtn.alpha = 0
+            })
         } else{
             UIView.animateWithDuration(0.2, animations: {
                 self.serviceView.alpha = 1
+                self.resetBtn.alpha = 1
             })
         }
-        var billInputArr = billField.text.componentsSeparatedByString("$")
-        var billAmount = NSString(string: billInputArr[1]).doubleValue / Double(guestCount)
+        var billInputArr = billField.text.componentsSeparatedByString(",")
+        
+        let dirty = billField.text
+        let clean = dirty.stringByReplacingOccurrencesOfString(
+            "[\\$\\,]",
+            withString: "",
+            options: .RegularExpressionSearch)
+        var billAmount = NSString(string: clean).doubleValue / Double(guestCount)
         var tip = billAmount * tipPercent
         var total = tip + billAmount
         
+        if tipModes[tipMode] == "up"{
+            var diff = ceil(total) - total
+            tip = diff + tip
+            total = tip + billAmount
+            
+        } else if tipModes[tipMode] == "down"{
+            var diff = floor(total) - total
+            tip = diff + tip
+            total = tip + billAmount
+        }
+        
         var tipLabelText = String(format: "$%.2f", tip)
-        var totalLabelText = String(format: "$%.2f", total)
-        totalLabelText += " TOTAL PER PERSON"
+        var totalLabelText = "FOR A TOTAL OF " + String(format: "$%.2f", total)
+        if guestCount > 1{
+            totalLabelText += " EACH"
+//            totalLabelText += currentService
+        }
         var attributedString = NSMutableAttributedString(string:tipLabelText)
         attributedString.addAttribute(NSKernAttributeName, value: -6.1, range: NSMakeRange(0, attributedString.length))
         tipLabel.attributedText = attributedString
         
         attributedString = NSMutableAttributedString(string:totalLabelText)
-        attributedString.addAttribute(NSKernAttributeName, value: -1.1, range: NSMakeRange(0, attributedString.length))
+        attributedString.addAttribute(NSKernAttributeName, value: 1.4, range: NSMakeRange(0, attributedString.length))
         totalLabel.attributedText = attributedString
         
     }
@@ -176,15 +221,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
         onEditingChanged(self)
     }
     @IBAction func guestIncrease(sender: AnyObject) {
-        if guestCount < 4 {
+        if guestCount < maxGuestCount {
             guestCount++
-            if guestCount == 4{
+            if guestCount == maxGuestCount{
                 increaseBtn.alpha = 0.2
             }
         } else {
             return
         }
-        decreaseBtn.alpha = 1
+        if guestCount > 1 {
+            decreaseBtn.alpha = 1
+        } else {
+            decreaseBtn.alpha = 0.2
+            
+        }
+        
         var guestList = ""
         for index in 1...guestCount{
             guestList += currentService
@@ -223,7 +274,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func onNeut(sender: AnyObject) {
         view.endEditing(true)
-        currentService = "😐"
+        currentService = "😬"
         vbadBtn.alpha = 0.2
         badBtn.alpha = 0.2
         neutBtn.alpha = 1
@@ -235,7 +286,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     @IBAction func onGood(sender: AnyObject) {
         view.endEditing(true)
-        currentService = "😁"
+        currentService = "😀"
         vbadBtn.alpha = 0.2
         badBtn.alpha = 0.2
         neutBtn.alpha = 0.2
@@ -258,6 +309,43 @@ class ViewController: UIViewController, UITextFieldDelegate {
         onEditingChanged(vgoodBtn)
     }
     
+    @IBAction func resetAll(sender: AnyObject) {
+        billField.text = ""
+        currentString = ""
+        
+        UIView.animateWithDuration(0.2, delay: 0, options: UIViewAnimationOptions.CurveLinear, animations: {
+            
+            // Animations
+            self.serviceView.alpha = 0
+            self.splitView.alpha = 0
+            self.totalView.alpha = 0
+            self.resetBtn.alpha = 0
+            
+            }, completion: { finished in
+                
+                if finished {
+                    self.vbadBtn.alpha = 1
+                    self.badBtn.alpha = 1
+                    self.neutBtn.alpha = 1
+                    self.goodBtn.alpha = 1
+                    self.vgoodBtn.alpha = 1
+                }
+                
+        })
+        guestCount = 0
+        splitCount.text = ""
+        billField.becomeFirstResponder()
+
+    }
+    @IBAction func tipModeToggle(sender: AnyObject) {
+        
+        if tipMode == 2{
+            tipMode = 0
+        } else {
+            tipMode++
+        }
+        onEditingChanged(totalView)
+    }
     @IBAction func onTap(sender: AnyObject) {
         view.endEditing(true)
     }

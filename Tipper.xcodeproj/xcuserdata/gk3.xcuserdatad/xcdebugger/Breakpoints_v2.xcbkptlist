@@ -24,6 +24,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "tipper.ViewController.tipControl.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UISegmentedControl&gt;"
                   moduleName = "tipper"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/gk3/Dropbox%20(Facebook)/iOS%20Class/tipper/tipper/tipper/ViewController.swift"
                   timestampString = "449364696.354314"
                   startingColumnNumber = "9223372036854775807"
@@ -38,6 +39,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "tipper.ViewController.tipControl.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UISegmentedControl&gt;"
                   moduleName = "tipper"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/gk3/Dropbox%20(Facebook)/iOS%20Class/tipper/tipper/tipper/ViewController.swift"
                   timestampString = "449364696.354474"
                   startingColumnNumber = "9223372036854775807"
@@ -52,6 +54,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "tipper.ViewController.tipControl.materializeForSet : weak Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UISegmentedControl&gt;"
                   moduleName = "tipper"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/gk3/Dropbox%20(Facebook)/iOS%20Class/tipper/tipper/tipper/ViewController.swift"
                   timestampString = "449364696.354578"
                   startingColumnNumber = "9223372036854775807"
@@ -66,6 +69,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "tipper.ViewController.init (tipper.ViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;ObjectiveC.NSBundle&gt;) -&gt; tipper.ViewController"
                   moduleName = "tipper"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/gk3/Dropbox%20(Facebook)/iOS%20Class/tipper/tipper/tipper/ViewController.swift"
                   timestampString = "449364696.35468"
                   startingColumnNumber = "9223372036854775807"
@@ -80,6 +84,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "tipper.ViewController.init (tipper.ViewController.Type)() -&gt; tipper.ViewController"
                   moduleName = "tipper"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/gk3/Dropbox%20(Facebook)/iOS%20Class/tipper/tipper/tipper/ViewController.swift"
                   timestampString = "449364696.35478"
                   startingColumnNumber = "9223372036854775807"
@@ -94,6 +99,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "tipper.ViewController.init (tipper.ViewController.Type)(coder : ObjectiveC.NSCoder) -&gt; tipper.ViewController"
                   moduleName = "tipper"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/gk3/Dropbox%20(Facebook)/iOS%20Class/tipper/tipper/tipper/ViewController.swift"
                   timestampString = "449364696.354892"
                   startingColumnNumber = "9223372036854775807"
@@ -126,6 +132,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "tipper.ViewController.tipControl.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UISegmentedControl&gt;"
                   moduleName = "tipper"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/gk3/Dropbox%20(Facebook)/iOS%20Class/tipper/tipper/tipper/ViewController.swift"
                   timestampString = "449364680.84843"
                   startingColumnNumber = "9223372036854775807"
@@ -140,6 +147,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "tipper.ViewController.tipControl.materializeForSet : weak Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UISegmentedControl&gt;"
                   moduleName = "tipper"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/gk3/Dropbox%20(Facebook)/iOS%20Class/tipper/tipper/tipper/ViewController.swift"
                   timestampString = "449364680.848648"
                   startingColumnNumber = "9223372036854775807"
@@ -154,6 +162,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "tipper.ViewController.init (tipper.ViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;ObjectiveC.NSBundle&gt;) -&gt; tipper.ViewController"
                   moduleName = "tipper"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/gk3/Dropbox%20(Facebook)/iOS%20Class/tipper/tipper/tipper/ViewController.swift"
                   timestampString = "449364680.848945"
                   startingColumnNumber = "9223372036854775807"
@@ -168,6 +177,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "tipper.ViewController.init (tipper.ViewController.Type)() -&gt; tipper.ViewController"
                   moduleName = "tipper"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/gk3/Dropbox%20(Facebook)/iOS%20Class/tipper/tipper/tipper/ViewController.swift"
                   timestampString = "449364680.849075"
                   startingColumnNumber = "9223372036854775807"
@@ -182,6 +192,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "tipper.ViewController.init (tipper.ViewController.Type)(coder : ObjectiveC.NSCoder) -&gt; tipper.ViewController"
                   moduleName = "tipper"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/gk3/Dropbox%20(Facebook)/iOS%20Class/tipper/tipper/tipper/ViewController.swift"
                   timestampString = "449364680.849237"
                   startingColumnNumber = "9223372036854775807"
@@ -191,6 +202,54 @@
                   offsetFromSymbolStart = "56">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "tipper/ViewController.swift"
+            timestampString = "450080464.730975"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "tipper/ViewController.swift"
+            timestampString = "450080464.730975"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "tipper/ViewController.swift"
+            timestampString = "450080464.730975"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "229"
+            endingLineNumber = "229"
+            landmarkName = "guestIncrease(_:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -9,6 +9,19 @@
 /* Begin PBXBuildFile section */
 		33A8A6BA1AC935E6003178E8 /* tipper-launcher.png in Resources */ = {isa = PBXBuildFile; fileRef = 33A8A6B91AC935E6003178E8 /* tipper-launcher.png */; };
 		33A8A6BD1AC93839003178E8 /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33A8A6BC1AC93839003178E8 /* Images-2.xcassets */; };
+		33B21E691ACE7164004259F4 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B21E671ACE7164004259F4 /* Bolts.framework */; };
+		33B21E6A1ACE7164004259F4 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B21E681ACE7164004259F4 /* Parse.framework */; };
+		33B21E6C1ACE718A004259F4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B21E6B1ACE718A004259F4 /* AudioToolbox.framework */; };
+		33B21E6E1ACE7192004259F4 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B21E6D1ACE7192004259F4 /* CFNetwork.framework */; };
+		33B21E701ACE719A004259F4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B21E6F1ACE719A004259F4 /* CoreGraphics.framework */; };
+		33B21E721ACE71A1004259F4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B21E711ACE71A1004259F4 /* CoreLocation.framework */; };
+		33B21E741ACE71A9004259F4 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B21E731ACE71A9004259F4 /* MobileCoreServices.framework */; };
+		33B21E761ACE71AF004259F4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B21E751ACE71AF004259F4 /* QuartzCore.framework */; };
+		33B21E781ACE71B5004259F4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B21E771ACE71B5004259F4 /* Security.framework */; };
+		33B21E7A1ACE71B9004259F4 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B21E791ACE71B9004259F4 /* StoreKit.framework */; };
+		33B21E7C1ACE71C0004259F4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B21E7B1ACE71C0004259F4 /* SystemConfiguration.framework */; };
+		33B21E7E1ACE71C8004259F4 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B21E7D1ACE71C8004259F4 /* libz.dylib */; };
+		33B21E801ACE71D1004259F4 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B21E7F1ACE71D1004259F4 /* libsqlite3.dylib */; };
 		33D585D61A9EE4460036405A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D585D51A9EE4460036405A /* AppDelegate.swift */; };
 		33D585D81A9EE4460036405A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D585D71A9EE4460036405A /* ViewController.swift */; };
 		33D585DB1A9EE4460036405A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33D585D91A9EE4460036405A /* Main.storyboard */; };
@@ -32,6 +45,20 @@
 /* Begin PBXFileReference section */
 		33A8A6B91AC935E6003178E8 /* tipper-launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tipper-launcher.png"; path = "../tipper-launcher.png"; sourceTree = "<group>"; };
 		33A8A6BC1AC93839003178E8 /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
+		33B21E671ACE7164004259F4 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		33B21E681ACE7164004259F4 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		33B21E6B1ACE718A004259F4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		33B21E6D1ACE7192004259F4 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		33B21E6F1ACE719A004259F4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		33B21E711ACE71A1004259F4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		33B21E731ACE71A9004259F4 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		33B21E751ACE71AF004259F4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		33B21E771ACE71B5004259F4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		33B21E791ACE71B9004259F4 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		33B21E7B1ACE71C0004259F4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		33B21E7D1ACE71C8004259F4 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		33B21E7F1ACE71D1004259F4 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		33B21E811ACE73C0004259F4 /* tipper-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "tipper-Bridging-Header.h"; sourceTree = "<group>"; };
 		33D585D01A9EE4460036405A /* tipper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tipper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33D585D41A9EE4460036405A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33D585D51A9EE4460036405A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +78,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33B21E801ACE71D1004259F4 /* libsqlite3.dylib in Frameworks */,
+				33B21E7E1ACE71C8004259F4 /* libz.dylib in Frameworks */,
+				33B21E7C1ACE71C0004259F4 /* SystemConfiguration.framework in Frameworks */,
+				33B21E7A1ACE71B9004259F4 /* StoreKit.framework in Frameworks */,
+				33B21E781ACE71B5004259F4 /* Security.framework in Frameworks */,
+				33B21E761ACE71AF004259F4 /* QuartzCore.framework in Frameworks */,
+				33B21E741ACE71A9004259F4 /* MobileCoreServices.framework in Frameworks */,
+				33B21E721ACE71A1004259F4 /* CoreLocation.framework in Frameworks */,
+				33B21E701ACE719A004259F4 /* CoreGraphics.framework in Frameworks */,
+				33B21E6E1ACE7192004259F4 /* CFNetwork.framework in Frameworks */,
+				33B21E6C1ACE718A004259F4 /* AudioToolbox.framework in Frameworks */,
+				33B21E6A1ACE7164004259F4 /* Parse.framework in Frameworks */,
+				33B21E691ACE7164004259F4 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +107,19 @@
 		33D585C71A9EE4460036405A = {
 			isa = PBXGroup;
 			children = (
+				33B21E7F1ACE71D1004259F4 /* libsqlite3.dylib */,
+				33B21E7D1ACE71C8004259F4 /* libz.dylib */,
+				33B21E7B1ACE71C0004259F4 /* SystemConfiguration.framework */,
+				33B21E791ACE71B9004259F4 /* StoreKit.framework */,
+				33B21E771ACE71B5004259F4 /* Security.framework */,
+				33B21E751ACE71AF004259F4 /* QuartzCore.framework */,
+				33B21E731ACE71A9004259F4 /* MobileCoreServices.framework */,
+				33B21E711ACE71A1004259F4 /* CoreLocation.framework */,
+				33B21E6F1ACE719A004259F4 /* CoreGraphics.framework */,
+				33B21E6D1ACE7192004259F4 /* CFNetwork.framework */,
+				33B21E6B1ACE718A004259F4 /* AudioToolbox.framework */,
+				33B21E671ACE7164004259F4 /* Bolts.framework */,
+				33B21E681ACE7164004259F4 /* Parse.framework */,
 				33D585D21A9EE4460036405A /* tipper */,
 				33D585E81A9EE4460036405A /* tipperTests */,
 				33D585D11A9EE4460036405A /* Products */,
@@ -95,6 +148,7 @@
 				33D585DE1A9EE4460036405A /* LaunchScreen.xib */,
 				33A8A6BC1AC93839003178E8 /* Images-2.xcassets */,
 				33D585D31A9EE4460036405A /* Supporting Files */,
+				33B21E811ACE73C0004259F4 /* tipper-Bridging-Header.h */,
 			);
 			path = tipper;
 			sourceTree = "<group>";
@@ -173,6 +227,7 @@
 				TargetAttributes = {
 					33D585CF1A9EE4460036405A = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = NQEV22G3ZB;
 					};
 					33D585E41A9EE4460036405A = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -353,10 +408,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					/Users/gk3/Documents/FacebookSDK,
+				);
 				INFOPLIST_FILE = tipper/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "tipper/tipper-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -365,10 +432,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					/Users/gk3/Documents/FacebookSDK,
+				);
 				INFOPLIST_FILE = tipper/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "tipper/tipper-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
