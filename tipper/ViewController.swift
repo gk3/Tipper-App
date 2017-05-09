@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 10.0, *)
 class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var billField: UITextField!
@@ -37,15 +38,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     var tipPercent = 0.15
     var currentService = "😬"
-    var guestCount = 0
+    var guestCount = 1
     var maxGuestCount = 14
     
     let tipModes = ["normal", "up", "down"]
     var tipMode = 0
-    
+    let generator = UISelectionFeedbackGenerator()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        let buttonArr = [vbadBtn, badBtn, neutBtn, goodBtn, vgoodBtn]
+        for button in buttonArr {
+            button?.titleLabel?.adjustsFontSizeToFitWidth = true;
+        }
+
         var attributedString = NSMutableAttributedString(string: "TIPMOJI")
         attributedString.addAttribute(NSKernAttributeName, value: CGFloat(6), range: NSRange(location: 0, length: attributedString.length))
         appLabel.attributedText = attributedString
@@ -87,17 +94,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         
         billField.inputAccessoryView = numToolbar
-        numToolbar.barStyle = UIBarStyle.BlackTranslucent
+        numToolbar.barStyle = UIBarStyle.blackTranslucent
         
         let gradient: CAGradientLayer = CAGradientLayer()
         
-        gradient.colors = [UIColor(red:0.37, green:0.13, blue:0.55, alpha:1).CGColor, UIColor(red:0.77, green:0, blue:1, alpha:1).CGColor]
+        gradient.colors = [UIColor(red:0.37, green:0.13, blue:0.55, alpha:1).cgColor, UIColor(red:0.77, green:0, blue:1, alpha:1).cgColor]
         gradient.locations = [0.0 , 1.0]
         gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
         gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
         gradient.frame = CGRect(x: 0.0, y: 0.0, width: self.view.frame.size.width, height: self.view.frame.size.height)
         
-        self.view.layer.insertSublayer(gradient, atIndex: 0)
+        self.view.layer.insertSublayer(gradient, at: 0)
         
     }
 
@@ -110,15 +117,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.billField.resignFirstResponder()
     }
     
-    func textField(billField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    func textField(_ billField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         switch string {
         case "0","1","2","3","4","5","6","7","8","9":
             currentString += string
 //            println(currentString)
             formatCurrency(string: currentString)
         default:
-            var array = Array(string)
-            var currentStringArray = Array(currentString)
+            let array = Array(string.characters)
+            var currentStringArray = Array(currentString.characters)
             if array.count == 0 && currentStringArray.count != 0 {
                 currentStringArray.removeLast()
                 currentString = ""
@@ -130,51 +137,51 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
         return false
     }
-    
-    func formatCurrency(#string: String) {
+
+    func formatCurrency(string: String) {
 //        println("format \(string)")
-        let formatter = NSNumberFormatter()
-        formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
-        formatter.locale = NSLocale(localeIdentifier: "en_US")
-        var numberFromField = (NSString(string: currentString).doubleValue)/100
-        billField.text = formatter.stringFromNumber(numberFromField)
+        let formatter = NumberFormatter()
+        formatter.numberStyle = NumberFormatter.Style.currency
+        formatter.locale = Locale(identifier: "en_US")
+        let numberFromField = (NSString(string: currentString).doubleValue)/100
+        billField.text = formatter.string(from: NSNumber(value: numberFromField))
         onEditingChanged(self)
     }
     
-    @IBAction func onEditingChanged(sender: AnyObject) {
+    @IBAction func onEditingChanged(_ sender: AnyObject) {
         if billField.text == ""{
-            UIView.animateWithDuration(0.2, animations: {
+            UIView.animate(withDuration: 0.2, animations: {
                 self.resetBtn.alpha = 0
             })
         } else{
-            UIView.animateWithDuration(0.2, animations: {
+            UIView.animate(withDuration: 0.2, animations: {
                 self.serviceView.alpha = 1
                 self.resetBtn.alpha = 1
             })
         }
-        var billInputArr = billField.text.componentsSeparatedByString(",")
-        
+//        var billInputArr = billField.text?.components(separatedBy: ",")
         let dirty = billField.text
-        let clean = dirty.stringByReplacingOccurrencesOfString(
-            "[\\$\\,]",
-            withString: "",
-            options: .RegularExpressionSearch)
-        var billAmount = NSString(string: clean).doubleValue / Double(guestCount)
+        let clean = dirty?.replacingOccurrences(of: "[\\$\\,]", with: "", options: .regularExpression)
+//        let clean = dirty.stringByReplacingOccurrencesOfString(
+//            "[\\$\\,]",
+//            withString: "",
+//            options: .RegularExpressionSearch)
+        let billAmount = NSString(string: clean!).doubleValue / Double(guestCount)
         var tip = billAmount * tipPercent
         var total = tip + billAmount
         
         if tipModes[tipMode] == "up"{
-            var diff = ceil(total) - total
+            let diff = ceil(total) - total
             tip = diff + tip
             total = tip + billAmount
             
         } else if tipModes[tipMode] == "down"{
-            var diff = floor(total) - total
+            let diff = floor(total) - total
             tip = diff + tip
             total = tip + billAmount
         }
         
-        var tipLabelText = String(format: "$%.2f", tip)
+        let tipLabelText = String(format: "$%.2f", tip)
         var totalLabelText = "FOR A TOTAL OF " + String(format: "$%.2f", total)
         if guestCount > 1{
             totalLabelText += " EACH"
@@ -190,22 +197,27 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
     }
 
-    @IBAction func serviceChange(sender: AnyObject) {
+    @IBAction func serviceChange(_ sender: AnyObject) {
+        generator.selectionChanged()
+
         if guestCount > 0{
             var guestList = ""
-            for index in 1...guestCount{
+            for _ in 1...guestCount{
                 guestList += currentService
             }
             splitCount.text = guestList
         }
-        UIView.animateWithDuration(0.2, animations: {
+        UIView.animate(withDuration: 0.2, animations: {
             self.splitView.alpha = 1
+            self.totalView.alpha = 1
         })
     }
     
-    @IBAction func guestDecrease(sender: AnyObject) {
+    @IBAction func guestDecrease(_ sender: AnyObject) {
+        generator.selectionChanged()
+
         if guestCount > 1 {
-            guestCount--
+            guestCount -= 1
             if guestCount == 1{
                 decreaseBtn.alpha = 0.2
             }
@@ -214,15 +226,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
         increaseBtn.alpha = 1
         var guestList = ""
-        for index in 1...guestCount{
+        for _ in 1...guestCount{
             guestList += currentService
         }
         splitCount.text = guestList
         onEditingChanged(self)
     }
-    @IBAction func guestIncrease(sender: AnyObject) {
+    @IBAction func guestIncrease(_ sender: AnyObject) {
+        generator.selectionChanged()
+
         if guestCount < maxGuestCount {
-            guestCount++
+            guestCount += 1
             if guestCount == maxGuestCount{
                 increaseBtn.alpha = 0.2
             }
@@ -237,16 +251,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
         
         var guestList = ""
-        for index in 1...guestCount{
+        for _ in 1...guestCount{
             guestList += currentService
         }
         splitCount.text = guestList
         onEditingChanged(self)
-        UIView.animateWithDuration(0.2, animations: {
-            self.totalView.alpha = 1
-        })
+
     }
-    @IBAction func onVbad(sender: AnyObject) {
+    @IBAction func onVbad(_ sender: AnyObject) {
         view.endEditing(true)
         currentService = "😭"
         vbadBtn.alpha = 1
@@ -259,7 +271,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         onEditingChanged(vbadBtn)
     }
     
-    @IBAction func onBad(sender: AnyObject) {
+    @IBAction func onBad(_ sender: AnyObject) {
         view.endEditing(true)
         currentService = "😕"
         vbadBtn.alpha = 0.2
@@ -272,7 +284,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         onEditingChanged(badBtn)
     }
     
-    @IBAction func onNeut(sender: AnyObject) {
+    @IBAction func onNeut(_ sender: AnyObject) {
         view.endEditing(true)
         currentService = "😬"
         vbadBtn.alpha = 0.2
@@ -284,7 +296,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         serviceChange(neutBtn)
         onEditingChanged(neutBtn)
     }
-    @IBAction func onGood(sender: AnyObject) {
+    @IBAction func onGood(_ sender: AnyObject) {
         view.endEditing(true)
         currentService = "😀"
         vbadBtn.alpha = 0.2
@@ -296,7 +308,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         serviceChange(goodBtn)
         onEditingChanged(goodBtn)
     }
-    @IBAction func onVgood(sender: AnyObject) {
+    @IBAction func onVgood(_ sender: AnyObject) {
         view.endEditing(true)
         currentService = "😍"
         vbadBtn.alpha = 0.2
@@ -309,11 +321,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
         onEditingChanged(vgoodBtn)
     }
     
-    @IBAction func resetAll(sender: AnyObject) {
+    @IBAction func resetAll(_ sender: AnyObject) {
         billField.text = ""
         currentString = ""
-        
-        UIView.animateWithDuration(0.2, delay: 0, options: UIViewAnimationOptions.CurveLinear, animations: {
+        generator.selectionChanged()
+
+        UIView.animate(withDuration: 0.2, delay: 0, options: UIViewAnimationOptions.curveLinear, animations: {
             
             // Animations
             self.serviceView.alpha = 0
@@ -332,21 +345,22 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 }
                 
         })
-        guestCount = 0
+        guestCount = 1
         splitCount.text = ""
         billField.becomeFirstResponder()
 
     }
-    @IBAction func tipModeToggle(sender: AnyObject) {
-        
+    @IBAction func tipModeToggle(_ sender: AnyObject) {
+        generator.selectionChanged()
+
         if tipMode == 2{
             tipMode = 0
         } else {
-            tipMode++
+            tipMode += 1
         }
         onEditingChanged(totalView)
     }
-    @IBAction func onTap(sender: AnyObject) {
+    @IBAction func onTap(_ sender: AnyObject) {
         view.endEditing(true)
     }
 }
