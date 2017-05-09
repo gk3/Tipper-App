@@ -122,9 +122,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "10"
-            endingLineNumber = "10"
-            landmarkName = "ViewController"
-            landmarkType = "3">
+            endingLineNumber = "10">
             <Locations>
                <Location
                   shouldBeEnabled = "No"

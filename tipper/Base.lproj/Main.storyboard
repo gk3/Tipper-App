@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
-    <device id="retina5_5" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment version="2048" identifier="iOS"/>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,14 +29,14 @@
                         <viewControllerLayoutGuide type="bottom" id="2c0-JG-1mW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F7d-NL-pOs">
-                                <rect key="frame" x="0.0" y="65" width="414" height="134"/>
+                                <rect key="frame" x="0.0" y="65" width="375" height="134"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOW MUCH WAS THE BILL?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NL4-QC-kM2">
-                                        <rect key="frame" x="15" y="13" width="127" height="14"/>
+                                        <rect key="frame" x="15" y="13" width="126.5" height="14"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="14" id="ZBi-LO-TEM"/>
                                         </constraints>
@@ -45,7 +45,7 @@
                                         <color key="highlightedColor" red="0.98356214571250011" green="1" blue="0.86291878896293572" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </label>
                                     <textField autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="top" placeholder="$0.00" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="62S-bI-eE9">
-                                        <rect key="frame" x="15" y="52" width="384" height="67"/>
+                                        <rect key="frame" x="15" y="52" width="345" height="67"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Miso-Light" family="Miso" pointSize="90"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad" keyboardAppearance="alert" returnKeyType="done"/>
@@ -66,214 +66,87 @@
                                 </constraints>
                             </view>
                             <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zIz-4k-amA">
-                                <rect key="frame" x="0.0" y="199" width="414" height="134"/>
+                                <rect key="frame" x="0.0" y="199" width="375" height="114"/>
                                 <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="firstBaseline" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="laU-vC-jTS">
+                                        <rect key="frame" x="14" y="26.5" width="347" height="84"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7FC-4O-SCU">
+                                                <rect key="frame" x="0.0" y="0.0" width="69.5" height="84"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <state key="normal" title="😭">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onVbad:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="K2t-eN-1cL"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="54s-sP-cTo">
+                                                <rect key="frame" x="69.5" y="-2" width="69.5" height="80"/>
+                                                <fontDescription key="fontDescription" name=".AppleColorEmojiUI" family=".Apple Color Emoji UI" pointSize="60"/>
+                                                <inset key="contentEdgeInsets" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="😕">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onBad:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="bzd-Pw-J7h"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lrS-zc-0lA">
+                                                <rect key="frame" x="139" y="0.0" width="69" height="84"/>
+                                                <fontDescription key="fontDescription" name=".AppleColorEmojiUI" family=".Apple Color Emoji UI" pointSize="60"/>
+                                                <state key="normal" title="😬">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onNeut:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Urz-2u-igd"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7w-8x-H17">
+                                                <rect key="frame" x="208" y="5" width="69.5" height="73"/>
+                                                <fontDescription key="fontDescription" name=".AppleColorEmojiUI" family=".Apple Color Emoji UI" pointSize="60"/>
+                                                <inset key="contentEdgeInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="😀">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onGood:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="WkD-Wv-e2D"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q6F-MC-csj">
+                                                <rect key="frame" x="277.5" y="0.0" width="69.5" height="84"/>
+                                                <fontDescription key="fontDescription" name=".AppleColorEmojiUI" family=".Apple Color Emoji UI" pointSize="60"/>
+                                                <state key="normal" title="😍">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onVgood:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="UhD-Gr-BWa"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOW WAS THE SERVICE?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Luj-hF-ruq">
-                                        <rect key="frame" x="15" y="13" width="116" height="14"/>
+                                        <rect key="frame" x="15" y="13" width="115.5" height="13.5"/>
                                         <fontDescription key="fontDescription" name="Miso-Bold" family="Miso" pointSize="15"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="highlightedColor" red="0.9835621457" green="1" blue="0.86291878899999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7FC-4O-SCU">
-                                        <rect key="frame" x="14" y="37" width="60" height="84"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="84" id="NRs-JJ-bPA"/>
-                                            <constraint firstAttribute="width" constant="60" id="TMP-gj-zae"/>
-                                        </constraints>
-                                        <state key="normal">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="😭">
-                                                    <attributes>
-                                                        <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                        <font key="NSFont" size="60" name="AppleColorEmoji"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </state>
-                                        <connections>
-                                            <action selector="onVbad:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="K2t-eN-1cL"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w7w-8x-H17">
-                                        <rect key="frame" x="240" y="36" width="94" height="84"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="84" id="jQe-3A-940"/>
-                                        </constraints>
-                                        <inset key="contentEdgeInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="😀">
-                                                    <attributes>
-                                                        <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <font key="NSFont" size="60" name=".AppleColorEmojiUI"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </state>
-                                        <connections>
-                                            <action selector="onGood:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="WkD-Wv-e2D"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="54s-sP-cTo">
-                                        <rect key="frame" x="74" y="33" width="101" height="84"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="Tv1-MP-MDd"/>
-                                            <constraint firstAttribute="height" constant="84" id="b7l-tA-9DI"/>
-                                        </constraints>
-                                        <inset key="contentEdgeInsets" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="😕">
-                                                    <attributes>
-                                                        <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <font key="NSFont" size="60" name=".AppleColorEmojiUI"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </state>
-                                        <connections>
-                                            <action selector="onBad:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="bzd-Pw-J7h"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q6F-MC-csj">
-                                        <rect key="frame" x="334" y="36" width="66" height="84"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="66" id="YWN-Ax-Nhf"/>
-                                            <constraint firstAttribute="height" constant="84" id="xvX-uo-5pf"/>
-                                        </constraints>
-                                        <state key="normal">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="😍">
-                                                    <attributes>
-                                                        <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <font key="NSFont" size="60" name=".AppleColorEmojiUI"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </state>
-                                        <connections>
-                                            <action selector="onVgood:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="UhD-Gr-BWa"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lrS-zc-0lA">
-                                        <rect key="frame" x="175" y="37" width="65" height="84"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="65" id="u0S-r0-XlD"/>
-                                        </constraints>
-                                        <state key="normal">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="😬">
-                                                    <attributes>
-                                                        <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <font key="NSFont" size="60" name=".AppleColorEmojiUI"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </state>
-                                        <connections>
-                                            <action selector="onNeut:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Urz-2u-igd"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="q6F-MC-csj" firstAttribute="leading" secondItem="w7w-8x-H17" secondAttribute="trailing" id="0fO-JR-YJS"/>
-                                    <constraint firstItem="54s-sP-cTo" firstAttribute="leading" secondItem="7FC-4O-SCU" secondAttribute="trailing" id="1yZ-RN-5Pv"/>
                                     <constraint firstItem="Luj-hF-ruq" firstAttribute="top" secondItem="zIz-4k-amA" secondAttribute="top" constant="13" id="4bA-qv-6Rr"/>
-                                    <constraint firstAttribute="trailing" secondItem="q6F-MC-csj" secondAttribute="trailing" constant="14" id="6Fu-5U-hA8"/>
-                                    <constraint firstItem="lrS-zc-0lA" firstAttribute="baseline" secondItem="q6F-MC-csj" secondAttribute="baseline" id="6bS-KM-NDn"/>
-                                    <constraint firstAttribute="bottom" secondItem="7FC-4O-SCU" secondAttribute="bottom" constant="13" id="8b8-93-zSA"/>
-                                    <constraint firstItem="7FC-4O-SCU" firstAttribute="leading" secondItem="zIz-4k-amA" secondAttribute="leading" constant="14" id="GUy-be-KLd"/>
-                                    <constraint firstItem="lrS-zc-0lA" firstAttribute="leading" secondItem="54s-sP-cTo" secondAttribute="trailing" id="NRK-AF-Crp"/>
+                                    <constraint firstAttribute="trailing" secondItem="laU-vC-jTS" secondAttribute="trailing" constant="14" id="GYX-GS-oBO"/>
                                     <constraint firstItem="Luj-hF-ruq" firstAttribute="leading" secondItem="zIz-4k-amA" secondAttribute="leading" constant="15" id="TyO-vI-ZW2"/>
-                                    <constraint firstAttribute="height" constant="134" id="Vz6-ca-y9i"/>
-                                    <constraint firstAttribute="bottom" secondItem="w7w-8x-H17" secondAttribute="bottom" constant="14" id="aP8-1o-tg1"/>
-                                    <constraint firstAttribute="bottom" secondItem="54s-sP-cTo" secondAttribute="bottom" constant="17" id="jDM-xk-dC6"/>
-                                    <constraint firstAttribute="bottom" secondItem="q6F-MC-csj" secondAttribute="bottom" constant="14" id="kuJ-zh-zEc"/>
-                                    <constraint firstItem="lrS-zc-0lA" firstAttribute="centerX" secondItem="zIz-4k-amA" secondAttribute="centerX" id="nNl-Tb-LIN"/>
-                                    <constraint firstItem="w7w-8x-H17" firstAttribute="leading" secondItem="lrS-zc-0lA" secondAttribute="trailing" id="oUi-MH-5I3"/>
-                                    <constraint firstItem="lrS-zc-0lA" firstAttribute="top" secondItem="7FC-4O-SCU" secondAttribute="top" id="v1X-uE-viy"/>
-                                </constraints>
-                            </view>
-                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KA9-ge-pAH">
-                                <rect key="frame" x="0.0" y="332" width="414" height="133"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SPLIT THE CHECK?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="puo-y6-70E">
-                                        <rect key="frame" x="15" y="13" width="85" height="14"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="14" id="Vs3-uQ-bxY"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Miso-Bold" family="Miso" pointSize="15"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <color key="highlightedColor" red="0.9835621457" green="1" blue="0.86291878899999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="30" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uEA-If-Xbz">
-                                        <rect key="frame" x="11" y="32" width="297" height="86"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="😐😐😐😐">
-                                                <attributes>
-                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" size="60" name="AppleColorEmoji"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineSpacing="1"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWO-zQ-1Lh">
-                                        <rect key="frame" x="358" y="43" width="40" height="73"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="ukr-pS-cN7"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Miso" family="Miso" pointSize="70"/>
-                                        <state key="normal" title="+">
-                                            <color key="titleColor" red="0.98307223992431303" green="1" blue="0.95072016703449336" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="guestIncrease:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="O0m-1f-HoI"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YzJ-gU-lzR">
-                                        <rect key="frame" x="317" y="43" width="40" height="73"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="OKh-Sj-dyn"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Miso" family="Miso" pointSize="70"/>
-                                        <state key="normal" title="-">
-                                            <color key="titleColor" red="0.98307223990000003" green="1" blue="0.95072016699999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="guestDecrease:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Ncx-Gy-5bc"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="YzJ-gU-lzR" secondAttribute="bottom" constant="17" id="107-CQ-MAh"/>
-                                    <constraint firstItem="uEA-If-Xbz" firstAttribute="leading" secondItem="KA9-ge-pAH" secondAttribute="leading" constant="11" id="5HQ-Vr-R2p"/>
-                                    <constraint firstItem="YzJ-gU-lzR" firstAttribute="baseline" secondItem="aWO-zQ-1Lh" secondAttribute="baseline" id="C01-qd-F9v"/>
-                                    <constraint firstItem="YzJ-gU-lzR" firstAttribute="leading" secondItem="uEA-If-Xbz" secondAttribute="trailing" constant="9" id="C3Z-8p-dpx"/>
-                                    <constraint firstItem="uEA-If-Xbz" firstAttribute="top" secondItem="puo-y6-70E" secondAttribute="bottom" constant="5" id="DrA-wf-83i"/>
-                                    <constraint firstAttribute="bottom" secondItem="uEA-If-Xbz" secondAttribute="bottom" constant="15" id="EZY-LS-si6"/>
-                                    <constraint firstItem="puo-y6-70E" firstAttribute="top" secondItem="KA9-ge-pAH" secondAttribute="top" constant="13" id="Kle-3F-qsB"/>
-                                    <constraint firstAttribute="trailing" secondItem="aWO-zQ-1Lh" secondAttribute="trailing" constant="16" id="MSa-Dn-maE"/>
-                                    <constraint firstItem="aWO-zQ-1Lh" firstAttribute="leading" secondItem="YzJ-gU-lzR" secondAttribute="trailing" constant="1" id="Oo3-DN-gHW"/>
-                                    <constraint firstItem="puo-y6-70E" firstAttribute="leading" secondItem="KA9-ge-pAH" secondAttribute="leading" constant="15" id="VfA-P3-E3g"/>
-                                    <constraint firstItem="YzJ-gU-lzR" firstAttribute="top" secondItem="KA9-ge-pAH" secondAttribute="top" constant="43" id="weh-1V-2mX"/>
+                                    <constraint firstAttribute="height" constant="114" id="Vz6-ca-y9i"/>
+                                    <constraint firstItem="laU-vC-jTS" firstAttribute="top" secondItem="Luj-hF-ruq" secondAttribute="bottom" id="XkS-I2-9EV"/>
+                                    <constraint firstItem="laU-vC-jTS" firstAttribute="leading" secondItem="zIz-4k-amA" secondAttribute="leading" constant="14" id="kXt-qZ-SsE"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JgA-Zc-87Y">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exm-mp-h9V">
-                                        <rect key="frame" x="370" y="27" width="30" height="25"/>
+                                        <rect key="frame" x="331" y="27" width="30" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="Cdc-Qk-cUy"/>
                                         </constraints>
@@ -287,7 +160,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIPMOJI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="97p-0b-E3C">
-                                        <rect key="frame" x="127" y="29" width="159" height="21"/>
+                                        <rect key="frame" x="127" y="29" width="120" height="21"/>
                                         <fontDescription key="fontDescription" name="Miso-Bold" family="Miso" pointSize="25"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -305,10 +178,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TOJ-fp-a3Z">
-                                <rect key="frame" x="0.0" y="465" width="414" height="271"/>
+                                <rect key="frame" x="0.0" y="423" width="375" height="244"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$100" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dVm-pv-dIz">
-                                        <rect key="frame" x="2" y="231" width="414" height="18"/>
+                                        <rect key="frame" x="2" y="204" width="375" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="0x8-c2-X6P"/>
                                         </constraints>
@@ -317,13 +190,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$20" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" minimumFontSize="80" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XZa-c4-C8S">
-                                        <rect key="frame" x="-5" y="60" width="414" height="171"/>
+                                        <rect key="frame" x="-5" y="60" width="375" height="144"/>
                                         <fontDescription key="fontDescription" name="Miso-Light" family="Miso" pointSize="140"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIP THIS MUCH:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iLi-JC-a0T">
-                                        <rect key="frame" x="0.0" y="23" width="414" height="24"/>
+                                        <rect key="frame" x="0.0" y="23" width="375" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="khN-VE-2NY"/>
                                         </constraints>
@@ -340,6 +213,7 @@
                                     <constraint firstAttribute="trailing" secondItem="dVm-pv-dIz" secondAttribute="trailing" constant="-2" id="4cx-oS-5YI"/>
                                     <constraint firstItem="iLi-JC-a0T" firstAttribute="leading" secondItem="TOJ-fp-a3Z" secondAttribute="leading" id="9LM-al-sa7"/>
                                     <constraint firstAttribute="trailing" secondItem="iLi-JC-a0T" secondAttribute="trailing" id="EIR-DX-t45"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="F0V-dG-6xg"/>
                                     <constraint firstItem="XZa-c4-C8S" firstAttribute="leading" secondItem="TOJ-fp-a3Z" secondAttribute="leading" constant="-5" id="RLm-7Y-qEE"/>
                                     <constraint firstItem="XZa-c4-C8S" firstAttribute="top" secondItem="iLi-JC-a0T" secondAttribute="bottom" constant="13" id="eir-TK-q41"/>
                                     <constraint firstItem="iLi-JC-a0T" firstAttribute="top" secondItem="TOJ-fp-a3Z" secondAttribute="top" constant="23" id="vRk-Tj-Nsl"/>
@@ -348,6 +222,77 @@
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="jI9-Lo-nWS" appends="YES" id="Gdq-WH-Knt"/>
                                 </connections>
+                            </view>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KA9-ge-pAH">
+                                <rect key="frame" x="0.0" y="313" width="375" height="110"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SPLIT THE CHECK?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="puo-y6-70E">
+                                        <rect key="frame" x="15" y="13" width="85" height="14"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="14" id="Vs3-uQ-bxY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Miso-Bold" family="Miso" pointSize="15"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="highlightedColor" red="0.9835621457" green="1" blue="0.86291878899999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWO-zQ-1Lh">
+                                        <rect key="frame" x="335" y="26.5" width="30" height="73"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="73" id="16h-a3-joe"/>
+                                            <constraint firstAttribute="width" constant="30" id="5dJ-c2-OBB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Miso" family="Miso" pointSize="70"/>
+                                        <state key="normal" title="+">
+                                            <color key="titleColor" red="0.98307223992431303" green="1" blue="0.95072016703449336" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="guestIncrease:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="O0m-1f-HoI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YzJ-gU-lzR">
+                                        <rect key="frame" x="283" y="37" width="40" height="53"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="dTC-FY-kqY"/>
+                                            <constraint firstAttribute="height" constant="53" id="uNE-O4-1Th"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Miso" family="Miso" pointSize="70"/>
+                                        <state key="normal" title="-">
+                                            <color key="titleColor" red="0.98307223990000003" green="1" blue="0.95072016699999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="guestDecrease:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Ncx-Gy-5bc"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="9" enabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEA-If-Xbz">
+                                        <rect key="frame" x="8" y="32" width="252" height="63"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="😐😐😐😐">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="60" name="AppleColorEmoji"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineSpacing="1"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="uEA-If-Xbz" firstAttribute="leading" secondItem="KA9-ge-pAH" secondAttribute="leading" constant="11" id="5HQ-Vr-R2p"/>
+                                    <constraint firstAttribute="bottom" secondItem="aWO-zQ-1Lh" secondAttribute="bottom" constant="11" id="7tA-8y-ps6"/>
+                                    <constraint firstItem="uEA-If-Xbz" firstAttribute="top" secondItem="puo-y6-70E" secondAttribute="bottom" constant="5" id="DrA-wf-83i"/>
+                                    <constraint firstItem="aWO-zQ-1Lh" firstAttribute="leading" secondItem="YzJ-gU-lzR" secondAttribute="trailing" constant="12" id="EWS-Ra-yAo"/>
+                                    <constraint firstAttribute="bottom" secondItem="uEA-If-Xbz" secondAttribute="bottom" constant="15" id="EZY-LS-si6"/>
+                                    <constraint firstItem="puo-y6-70E" firstAttribute="top" secondItem="KA9-ge-pAH" secondAttribute="top" constant="13" id="Kle-3F-qsB"/>
+                                    <constraint firstAttribute="height" constant="110" id="LLk-PM-hNw"/>
+                                    <constraint firstItem="YzJ-gU-lzR" firstAttribute="leading" secondItem="uEA-If-Xbz" secondAttribute="trailing" constant="20" id="Tpj-EH-BY7"/>
+                                    <constraint firstItem="puo-y6-70E" firstAttribute="leading" secondItem="KA9-ge-pAH" secondAttribute="leading" constant="15" id="VfA-P3-E3g"/>
+                                    <constraint firstAttribute="bottom" secondItem="YzJ-gU-lzR" secondAttribute="bottom" constant="20" id="Y88-Te-YA8"/>
+                                    <constraint firstAttribute="trailing" secondItem="aWO-zQ-1Lh" secondAttribute="trailing" constant="10" id="nLm-dt-y54"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.65466725826263428" green="0.00080469250679016113" blue="0.8913877010345459" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -362,7 +307,7 @@
                             <constraint firstItem="zIz-4k-amA" firstAttribute="top" secondItem="F7d-NL-pOs" secondAttribute="bottom" id="XQZ-XZ-5TP"/>
                             <constraint firstItem="JgA-Zc-87Y" firstAttribute="trailing" secondItem="F7d-NL-pOs" secondAttribute="trailing" id="ZWh-4V-SOP"/>
                             <constraint firstItem="TOJ-fp-a3Z" firstAttribute="top" secondItem="KA9-ge-pAH" secondAttribute="bottom" id="awB-ol-QbV"/>
-                            <constraint firstItem="KA9-ge-pAH" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="332" id="bWe-Z7-a61"/>
+                            <constraint firstItem="KA9-ge-pAH" firstAttribute="top" secondItem="zIz-4k-amA" secondAttribute="bottom" id="bsY-jL-Ivr"/>
                             <constraint firstItem="zIz-4k-amA" firstAttribute="trailing" secondItem="KA9-ge-pAH" secondAttribute="trailing" id="d6C-cT-Oe3"/>
                             <constraint firstItem="KA9-ge-pAH" firstAttribute="leading" secondItem="TOJ-fp-a3Z" secondAttribute="leading" id="ekB-Hv-7mT"/>
                             <constraint firstItem="TOJ-fp-a3Z" firstAttribute="bottom" secondItem="2c0-JG-1mW" secondAttribute="top" id="fkJ-ce-NAc"/>
@@ -436,13 +381,13 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="232" y="362"/>
+            <point key="canvasLocation" x="231.5" y="361.5"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina5_5.fullscreen"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
